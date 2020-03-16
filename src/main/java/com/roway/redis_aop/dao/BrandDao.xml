@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.roway.redis_aop.dao.BrandDao">
+
+    <resultMap id="brandMap" type="com.roway.redis_aop.entity.BrandEntity">
+        <id 	property="id" 				column="DEVICE_ID"				jdbcType="INTEGER"/>
+        <result property="name" 		    column="name"			        jdbcType="VARCHAR"/>
+        <result property="logo" 		    column="logo"			        jdbcType="VARCHAR"/>
+        <result property="brandHTML" 		column="brandHTML"			    jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="select" parameterType="int" resultMap="brandMap">
+        select * from brand where id = #{id}
+    </select>
+
+</mapper>
